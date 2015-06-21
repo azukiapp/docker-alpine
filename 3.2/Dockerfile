@@ -13,6 +13,7 @@ RUN packages=' \
     bash \
     vim \
     git \
+    tar \
   ' \
   set -x \
   && apk --update add $packages
