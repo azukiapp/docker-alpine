@@ -13,6 +13,7 @@ A super small Docker image based on [Alpine Linux][alpine]. The image is only 5 
 
 ###### Image content:
 
+  - Bash
   - Git
   - VIM
   - curl
@@ -77,7 +78,6 @@ systems({
     mounts: {
       '/azk/#{manifest.dir}': path("."),
     },
-    scalable: {"default": 1},
   },
 });
 ```
