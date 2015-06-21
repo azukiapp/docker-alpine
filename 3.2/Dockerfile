@@ -6,7 +6,6 @@ RUN packages=' \
     bash \
     vim \
     git \
-    ca-certificates \
   ' \
   set -x \
   && apk --update add $packages
