@@ -73,7 +73,6 @@ systems({
       // "./script.sh",
     ],
     workdir: "/azk/#{manifest.dir}",
-    shell: "/bin/bash",
     command: "# command to run app. i.g.: `./start.sh`",
     mounts: {
       '/azk/#{manifest.dir}': path("."),
