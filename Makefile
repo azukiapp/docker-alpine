@@ -9,7 +9,7 @@ no-cache:
 # build_files=`find "$(shell pwd)/test" -name '*.bats' -type f -print0`
 # @export TEST_FILES="$(shell echo `find "test" -name '*.bats' -type f -print0`)"
 bats:
-	bats $(shell echo `find "test" -name '*.bats' -type f -print0`)[@]
+	bats $(shell echo `find "test" -name '*.bats' -type f -print0`)
 
 test: all bats
 	# Restart and run a tests
