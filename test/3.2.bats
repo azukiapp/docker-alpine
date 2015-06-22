@@ -2,22 +2,6 @@
 
 load ./test_helper
 
-@test "$test_label create a $azk_manifest with example system" {
-  app_path=$(spec.fixtures_tmp "test-app")
-  cd $app_path
-
-  run azk init
-  assert_success
-  assert_match  "${msg_not_found}"
-  assert_match "${msg_generated}"
-
-  run azk info --quiet
-  assert_success
-  assert_match ".*example.*:" "${lines[5]}"
-
-  assert [ -e "$app_path/$azk_manifest" ]
-}
-
 @test "version is correct" {
   run docker run "azukiapp/alpine:3.2" cat /etc/os-release
   [ $status -eq 0 ]
