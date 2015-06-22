@@ -1,7 +1,7 @@
 [azukiapp/alpine](http://images.azk.io/#/alpine)
 ==================
 
-[![Gitter](https://badges.gitter.im/Join Chat.svg)][gitter] [![CircleCI](https://img.shields.io/circleci/project/azukiapp/docker-alpine/release.svg)][circle-ci] [![Docker Pulls](https://img.shields.io/docker/pulls/azukiapp/alpine.svg)][azk-image]
+[![Gitter](https://badges.gitter.im/Join Chat.svg)][gitter] [![CircleCI](https://img.shields.io/circleci/project/azukiapp/docker-alpine/master.svg)][circle-ci] [![Docker Pulls](https://img.shields.io/docker/pulls/azukiapp/alpine.svg)][azk-image]
 
 A super small Docker image based on [Alpine Linux][alpine]. The image is only 5 MB and has access to a package repository that is much more complete than other BusyBox based images.
 
