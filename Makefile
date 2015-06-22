@@ -7,7 +7,7 @@ no-cache:
 	docker build --rm --no-cache -t azukiapp/alpine 3.2
 
 bats:
-	build_files=( `echo $(find ./test -name '*.bats' -type f -print0)` )
+	build_files=`echo $(find ./test -name '*.bats' -type f -print0)`
 	bats "${test_files[@]}"
 
 test: all bats
