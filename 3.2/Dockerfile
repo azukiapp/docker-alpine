@@ -16,4 +16,5 @@ RUN packages=' \
     tar \
   ' \
   set -x \
-  && apk --update add $packages
+  && apk --update add $packages \
+  && rm -rf /var/cache/apk/* \
