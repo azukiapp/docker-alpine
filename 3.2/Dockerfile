@@ -14,6 +14,8 @@ RUN packages=' \
     vim \
     git \
     tar \
+    curl \
+    wget \
   ' \
   set -x \
   && apk --update add $packages \
