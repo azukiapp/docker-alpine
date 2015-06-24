@@ -6,10 +6,10 @@ no-cache:
 	docker build --rm --no-cache -t azukiapp/alpine 3.2
 	docker build --rm --no-cache -t azukiapp/alpine 3.2
 
-# build_files=`find "$(shell pwd)/test" -name '*.bats' -type f -print0`
-# @export TEST_FILES="$(shell echo `find "test" -name '*.bats' -type f -print0`)"
+TEST_FILES=$(shell find test -name '*.bats' -type f -print0 | xargs -0n1 | sort -u)
+
 bats:
-	bats $(shell echo `find "test" -name '*.bats' -type f -print0`)
+	bats $(TEST_FILES)
 
 test: all bats
 	# Restart and run a tests
