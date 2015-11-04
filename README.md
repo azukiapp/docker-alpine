@@ -33,7 +33,7 @@ centos              latest        8efe422e6104      210 MB
 
 There are images such as `progrium/busybox` which get us very close to a minimal container and package system. But these particular BusyBox builds piggyback on the OpenWRT package index which is often lacking and not tailored towards generic everyday applications. Alpine Linux has a much more complete and update to date [package index][alpine-packages]:
 
-```console
+```
 $ docker run progrium/busybox opkg-install nodejs
 Unknown package 'nodejs'.
 Collected errors:
