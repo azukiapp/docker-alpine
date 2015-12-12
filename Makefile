@@ -23,7 +23,7 @@ test: bats
 
 TEST_FILES=$(shell find test -name '*.bats' -type f -print0 | xargs -0n1 | sort -u)
 bats: ${DEPS_PATH}/bats
-	${BATS} $(TEST_FILES)
+	${BATS} --pretty $(TEST_FILES)
 
 ${DEPS_PATH}/bats:
 	@mkdir -p ${DEPS_PATH}/bin
