@@ -24,3 +24,11 @@ test:
   override:
     - make test:
         parallel: true
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - |
+        # Trigger all tags/branchs for this automated build.
+        curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/azukiapp/postgres/trigger/${DOCKER_TOKEN}/
