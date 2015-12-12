@@ -8,22 +8,20 @@ general:
 machine:
   services:
     - docker
+  environment:
+    DEPS_PATH: ~/deps
 
 dependencies:
   cache_directories:
     - "~/deps"
-  pre:
-    - if [[ ! -e ~/deps/bats_v0.4.0.tar.gz ]]; then mkdir -p ~/deps; curl -sSL -o ~/deps/bats_v0.4.0.tar.gz https://github.com/sstephenson/bats/archive/v0.4.0.tar.gz; fi
-    - tar -xf ~/deps/bats_v0.4.0.tar.gz
-    - sudo bats-0.4.0/install.sh /usr/local
   override:
     - docker info
     - docker images
 
 test:
   override:
-    - make test:
-        parallel: true
+    - make build
+    - make test
 
 deployment:
   hub:
