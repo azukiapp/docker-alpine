@@ -20,8 +20,8 @@ dependencies:
 
 test:
   override:
-    - make build
-    - make test
+    - make -e build
+    - make -e test
 
 deployment:
   hub:
