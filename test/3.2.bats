@@ -2,31 +2,35 @@
 
 load ./test_helper
 
+image_name="azukiapp/alpine"
+ image_tag="3.2"
+image="${image_name}:${image_tag}"
+
 @test "version is correct" {
-  run docker run "azukiapp/alpine:3.2" cat /etc/os-release
-  [ $status -eq 0 ]
-  [ "${lines[2]}" = "VERSION_ID=3.2.0" ]
+  run ${DOCKER} run ${image} cat /etc/os-release
+  assert_success
+  assert_match "VERSION_ID=3.2"
 }
 
 @test "package installs cleanly" {
-  run docker run "azukiapp/alpine:3.2" apk add --update openssl
-  [ $status -eq 0 ]
+  run ${DOCKER} run ${image} apk add --update openssl
+  assert_success
 }
 
 @test "timezone" {
-  run docker run "azukiapp/alpine:3.2" date +%Z
-  [ $status -eq 0 ]
+  run ${DOCKER} run ${image} date +%Z
+  assert_success
   [ "$output" = "UTC" ]
 }
 
 @test "apk-install script should be missing" {
-  run docker run "azukiapp/alpine:3.2" which apk-install
+  run ${DOCKER} run ${image} which apk-install
   [ $status -eq 1 ]
 }
 
 @test "repository list is correct" {
-  run docker run "azukiapp/alpine:3.2" cat /etc/apk/repositories
-  [ $status -eq 0 ]
+  run ${DOCKER} run ${image} cat /etc/apk/repositories
+  assert_success
   assert_match  "${msg_not_found}"
 
   assert_match "http://dl-4.alpinelinux.org/alpine/v3.2/main/"
@@ -35,7 +39,7 @@ load ./test_helper
 }
 
 @test "cache is empty" {
-  run docker run "azukiapp/alpine:3.2" sh -c "ls -1 /var/cache/apk | wc -l"
-  [ $status -eq 0 ]
+  run ${DOCKER} run ${image} sh -c "ls -1 /var/cache/apk | wc -l"
+  assert_success
   [ "$output" = "0" ]
 }

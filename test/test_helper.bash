@@ -3,6 +3,8 @@
  __FILE__="${BASH_SOURCE[0]}"
 TESTS_DIR=$( cd "$( dirname "${__FILE__}" )" && pwd )
 
+DOCKER=$(basename $(which adocker) || "docker")
+
 load $TESTS_DIR/support/assertions.bash
 load $TESTS_DIR/support/commons.bash
 

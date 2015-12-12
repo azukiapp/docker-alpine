@@ -8,7 +8,7 @@ A super small Docker image based on [Alpine Linux][alpine]. The image is only 5 
 ###### Versions:
 
 <versions>
-- [`latest`, `3.2.0`, `3.2`, `3`](https://github.com/azukiapp/docker-alpine/blob/master/3.2/Dockerfile)
+- [`latest`, `3.2.3`, `3.2`, `3`](https://github.com/azukiapp/docker-alpine/blob/master/3.2/Dockerfile)
 </versions>
 
 ###### Image content:
@@ -60,7 +60,7 @@ Example of using that image with [azk](http://azk.io):
 /**
  * Documentation: http://docs.azk.io/Azkfile.js
  */
- 
+
 // Adds the systems that shape your system
 systems({
   "my-app": {
