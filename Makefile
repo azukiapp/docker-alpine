@@ -12,9 +12,11 @@ all: build test
 
 build:
 	${DOCKER} build -t ${IMAGE_NAME} 3.2
+	${DOCKER} build -t ${IMAGE_NAME}:3.2 3.2
 
 build-no-cache:
-	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME} 9.4
+	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME} 3.2
+	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME}:3.2 3.2
 
 test: bats
 
