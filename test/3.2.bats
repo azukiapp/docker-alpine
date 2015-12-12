@@ -20,7 +20,7 @@ image="${image_name}:${image_tag}"
 @test "timezone" {
   run ${DOCKER} run ${image} date +%Z
   assert_success
-  assert_match "^UTC"
+  [ "${lines[@]: -1}" = "UTC" ]
 }
 
 @test "apk-install script should be missing" {
@@ -41,5 +41,5 @@ image="${image_name}:${image_tag}"
 @test "cache is empty" {
   run ${DOCKER} run ${image} sh -c "ls -1 /var/cache/apk | wc -l"
   assert_success
-  assert_match "^0$"
+  [ "${lines[@]: -1}" = "0" ]
 }

@@ -4,7 +4,6 @@
 TESTS_DIR=$( cd "$( dirname "${__FILE__}" )" && pwd )
 
 DOCKER=$(which adocker || which "docker")
-DOCKER="${DOCKER} --memory-swap=-1"
 
 load $TESTS_DIR/support/assertions.bash
 load $TESTS_DIR/support/commons.bash
