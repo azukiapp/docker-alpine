@@ -20,6 +20,7 @@ RUN packages=' \
   ' \
   set -x \
   && apk --update add $packages \
+  && apk cache clean \
   && rm -rf /var/cache/apk/*
 
 CMD ["sh"]
