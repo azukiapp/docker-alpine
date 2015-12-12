@@ -31,7 +31,6 @@ image="${image_name}:${image_tag}"
 @test "repository list is correct" {
   run ${DOCKER} run ${image} cat /etc/apk/repositories
   assert_success
-  assert_match  "${msg_not_found}"
 
   assert_match "http://dl-4.alpinelinux.org/alpine/v3.2/main/"
   assert_match "@edge http://nl.alpinelinux.org/alpine/edge/main/"
