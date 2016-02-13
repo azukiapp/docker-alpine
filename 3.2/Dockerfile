@@ -5,8 +5,7 @@ MAINTAINER Azuki <support@azukiapp.com>
 RUN repositories="\
   http://dl-4.alpinelinux.org/alpine/v3.2/main/\
   @edge http://nl.alpinelinux.org/alpine/edge/main/\
-  @community http://nl.alpinelinux.org/alpine/edge/community/\
-  @testing http://nl.alpinelinux.org/alpine/edge/testing/" \
+  @community http://nl.alpinelinux.org/alpine/edge/community/" \
   && echo -e $repositories | sed -e 's/\/\s/\/\n/g' > /etc/apk/repositories
 
 # install default packages

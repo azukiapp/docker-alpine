@@ -34,7 +34,7 @@ image="${image_name}:${image_tag}"
 
   assert_match "http://dl-4.alpinelinux.org/alpine/v3.2/main/"
   assert_match "@edge http://nl.alpinelinux.org/alpine/edge/main/"
-  assert_match "@testing http://nl.alpinelinux.org/alpine/edge/testing/"
+  assert_match "@community http://nl.alpinelinux.org/alpine/edge/community/"
 }
 
 @test "cache is empty" {
