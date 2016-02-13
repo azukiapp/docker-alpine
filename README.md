@@ -4,14 +4,15 @@
 A super small Docker image based on [Alpine Linux][alpine].
 
 [![Circle CI](https://circleci.com/gh/azukiapp/docker-alpine.svg?style=svg)][circle-ci]
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/azukiapp/alpine/latest.svg?style=plastic)](https://imagelayers.io/?images=azukiapp/alpine:latest)
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/azukiapp/alpine/latest.svg?style=plastic)](https://imagelayers.io/?images=azukiapp/alpine:latest)
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/azukiapp/alpine/latest.svg?style=plastic)][imageslayers]
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/azukiapp/alpine/latest.svg?style=plastic)][imageslayers]
 
 Alpine versions (tags)
 ---
 
 <versions>
-- [`latest`, `3.2.3`, `3.2`, `3`](https://github.com/azukiapp/docker-alpine/blob/master/3.2/Dockerfile)
+- [`latest`, `3`, `3.3`](https://github.com/azukiapp/docker-alpine/blob/master/3.4/Dockerfile)
+- [`3`, `3.2`](https://github.com/azukiapp/docker-alpine/blob/master/3.2/Dockerfile)
 </versions>
 
 Image content:
@@ -36,7 +37,7 @@ Example of using that image with [azk][azk]:
 systems({
   "my-app": {
     // More info about alpine image: http://images.azk.io/#/alpine?from=images-azkfile-alpine
-    image: {"docker": "azukiapp/alpine"},
+    image: {"docker": "azukiapp/alpine:3.3"},
     // Steps to execute before running instances
     provision: [
       // "./script.sh",
@@ -57,10 +58,10 @@ Install [`postgresql-client`][postgresql-client]:
 
 ```dockerfile
 # Dockerfile
-FROM azukiapp/alpine:3.2
+FROM azukiapp/alpine:3.3
 
 RUN  apk add --update postgresql-client \
-  && rm -rf /var/cache/apk/* /var/tmp/* \
+  && rm -rf /var/cache/apk/* /var/tmp/*
 
 CMD ["psql"]
 ```
@@ -78,4 +79,5 @@ Azuki Dockerfiles distributed under the [Apache License][license].
 
 [issues]: https://github.com/azukiapp/docker-alpine/issues
 [circle-ci]: https://circleci.com/gh/azukiapp/docker-alpine
+[imageslayers]: https://imagelayers.io/?images=azukiapp/alpine:latest
 [license]: ./LICENSE

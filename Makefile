@@ -3,7 +3,6 @@ DEPS_PATH := ${ROOT_PATH}/deps
 BATS_VERSION := "master"
 IMAGE_NAME := "azukiapp/alpine"
 
-
 # bins
 DOCKER := $(shell which adocker || which docker)
 BATS := ${DEPS_PATH}/bin/bats
@@ -11,12 +10,14 @@ BATS := ${DEPS_PATH}/bin/bats
 all: build test
 
 build:
-	${DOCKER} build -t ${IMAGE_NAME} 3.2
-	${DOCKER} build -t ${IMAGE_NAME}:3.2 3.2
+	${DOCKER} build -t ${IMAGE_NAME}:latest 3.3
+	${DOCKER} build -t ${IMAGE_NAME}:3.3    3.3
+	${DOCKER} build -t ${IMAGE_NAME}:3.2    3.2
 
 build-no-cache:
-	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME} 3.2
-	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME}:3.2 3.2
+	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME}:latest 3.2
+	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME}:3.3    3.3
+	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME}:3.2    3.2
 
 test: bats
 
