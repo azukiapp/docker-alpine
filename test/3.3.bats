@@ -33,7 +33,7 @@ image="${image_name}:${image_tag}"
   assert_success
 
   assert_match "http://dl-4.alpinelinux.org/alpine/v3.3/main"
-  assert_match "http://dl-4.alpinelinux.org/alpine/v3.3/community"
+  assert_match "@community http://dl-4.alpinelinux.org/alpine/v3.3/community"
 }
 
 @test "cache is empty" {
