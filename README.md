@@ -74,6 +74,6 @@ Azuki Dockerfiles distributed under the [Apache License][license].
 [circleci-badge]: https://circleci.com/gh/azukiapp/docker-alpine.svg?style=svg
 
 [imagelayers]: https://imagelayers.io/?images=azukiapp/alpine:latest,azukiapp/alpine:3.4,azukiapp/alpine:3.3,azukiapp/alpine:3.2
-[imagelayers-badge]: https://imagelayers.io/badge/azukiapp/elixir:latest.svg
+[imagelayers-badge]: https://imagelayers.io/badge/azukiapp/alpine:latest.svg
 
 [license]: ./LICENSE
