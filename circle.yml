@@ -20,7 +20,7 @@ dependencies:
 
 test:
   override:
-    - make -e build
+    - make -e build-no-cache
     - make -e test
 
 deployment:
