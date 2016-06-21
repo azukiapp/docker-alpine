@@ -10,18 +10,10 @@ Alpine versions (tags)
 ---
 
 <versions>
-- [`latest`, `3`, `3.3`](https://github.com/azukiapp/docker-alpine/blob/master/3.4/Dockerfile)
-- [`3`, `3.2`](https://github.com/azukiapp/docker-alpine/blob/master/3.2/Dockerfile)
+- [`latest`, `3.4`](https://github.com/azukiapp/docker-alpine/blob/v3.4/3.4/Dockerfile)
+- [`3.3`](https://github.com/azukiapp/docker-alpine/blob/v3.3/3.3/Dockerfile)
+- [`3.2`](https://github.com/azukiapp/docker-alpine/blob/v3.2/3.2/Dockerfile)
 </versions>
-
-Image content:
-
-  - bash
-  - vim
-  - git
-  - tar
-  - curl
-  - wget
 
 ### Usage with `azk`
 
@@ -36,7 +28,7 @@ Example of using that image with [azk][azk]:
 systems({
   "my-app": {
     // More info about alpine image: http://images.azk.io/#/alpine?from=images-azkfile-alpine
-    image: {"docker": "azukiapp/alpine:3.3"},
+    image: {"docker": "azukiapp/alpine:3.4"},
     // Steps to execute before running instances
     provision: [
       // "./script.sh",
@@ -57,7 +49,7 @@ Install [`postgresql-client`][postgresql-client]:
 
 ```dockerfile
 # Dockerfile
-FROM azukiapp/alpine:3.3
+FROM azukiapp/alpine:3.4
 
 RUN  apk add --update postgresql-client \
   && rm -rf /var/cache/apk/* /var/tmp/*
@@ -81,7 +73,7 @@ Azuki Dockerfiles distributed under the [Apache License][license].
 [circleci]: https://circleci.com/gh/azukiapp/docker-alpine
 [circleci-badge]: https://circleci.com/gh/azukiapp/docker-alpine.svg?style=svg
 
-[imagelayers]: https://imagelayers.io/?images=azukiapp/alpine:latest,azukiapp/alpine:3.3,azukiapp/alpine:3.2
+[imagelayers]: https://imagelayers.io/?images=azukiapp/alpine:latest,azukiapp/alpine:3.4,azukiapp/alpine:3.3,azukiapp/alpine:3.2
 [imagelayers-badge]: https://imagelayers.io/badge/azukiapp/elixir:latest.svg
 
 [license]: ./LICENSE
