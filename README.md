@@ -3,9 +3,8 @@
 
 A super small Docker image based on [Alpine Linux][alpine].
 
-[![Circle CI](https://circleci.com/gh/azukiapp/docker-alpine.svg?style=svg)][circle-ci]
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/azukiapp/alpine/latest.svg?style=plastic)][imageslayers]
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/azukiapp/alpine/latest.svg?style=plastic)][imageslayers]
+[![Circle CI][circleci-badge]][circleci]
+[![][imagelayers-badge]][imagelayers]
 
 Alpine versions (tags)
 ---
@@ -78,6 +77,11 @@ Azuki Dockerfiles distributed under the [Apache License][license].
 [alpine]: http://alpinelinux.org/
 
 [issues]: https://github.com/azukiapp/docker-alpine/issues
-[circle-ci]: https://circleci.com/gh/azukiapp/docker-alpine
-[imageslayers]: https://imagelayers.io/?images=azukiapp/alpine:latest
+
+[circleci]: https://circleci.com/gh/azukiapp/docker-alpine
+[circleci-badge]: https://circleci.com/gh/azukiapp/docker-alpine.svg?style=svg
+
+[imagelayers]: https://imagelayers.io/?images=azukiapp/alpine:latest,azukiapp/alpine:3.3,azukiapp/alpine:3.2
+[imagelayers-badge]: https://imagelayers.io/badge/azukiapp/elixir:latest.svg
+
 [license]: ./LICENSE
